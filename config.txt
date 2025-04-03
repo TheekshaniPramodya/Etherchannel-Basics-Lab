@@ -1,0 +1,30 @@
+
+---
+
+### 2️⃣ `config.txt`
+This contains the `show running-config` output.
+
+```txt
+Switch0#show running-config
+!
+interface FastEthernet0/3
+ channel-group 1 mode on
+!
+interface FastEthernet0/4
+ channel-group 1 mode on
+!
+interface Port-channel1
+ switchport mode trunk
+!
+
+Switch1#show running-config
+!
+interface FastEthernet0/3
+ channel-group 1 mode on
+!
+interface FastEthernet0/4
+ channel-group 1 mode on
+!
+interface Port-channel1
+ switchport mode trunk
+!

@@ -1,0 +1,41 @@
+# Etherchannel Basics Lab
+
+![Etherchannel](https://i.ibb.co/21zhCvn7/trunk.png)
+
+## 📌 Overview
+This lab demonstrates EtherChannel, a technology used for link aggregation, which combines multiple physical links into a single logical link to increase bandwidth and provide redundancy.
+
+## 🖧 Network Topology
+- **Switch 0**: Configured with EtherChannel (Port-channel 1)
+- **Switch 1**: Configured with EtherChannel (Port-channel 1)
+- **Fa0/3 & Fa0/4**: Aggregated to form a 200 Mbps logical link
+
+## ⚙️ Configuration Steps
+
+1. **On Switch 0**
+   ```bash
+   Switch>enable
+   Switch#configure terminal
+   Switch(config)#hostname switch0
+   switch0(config)#interface range fa0/3-4
+   switch0(config-if-range)#channel-group 1 mode on
+   switch0(config-if-range)#exit
+   switch0(config)#interface port-channel 1
+   switch0(config-if)#switchport mode trunk
+
+2. **On Switch 1**
+   ```bash
+   Switch>enable
+   Switch#configure terminal
+   Switch(config)#hostname switch1
+   switch1(config)#interface range fa0/3-4
+   switch1(config-if-range)#channel-group 1 mode on
+   switch1(config-if-range)#exit
+   switch1(config)#interface port-channel 1
+   switch1(config-if)#switchport mode trunk
+
+   Verify EtherChannel
+   switch1#show etherchannel summary
+
+
+   
