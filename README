@@ -1,6 +1,6 @@
 #Etherchannel Basics Lab
 
-![Etherchannel](https://i.ibb.co/21zhCvn7/trunk.png)
+![Etherchannel](https://i.ibb.co/ch4y6w70/image.png)
 
 📌 Overview
 This lab demonstrates EtherChannel, a technology used for link aggregation, which combines multiple physical links into a single logical link to increase bandwidth and provide redundancy.
